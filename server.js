@@ -60,6 +60,11 @@ io.on("connection", (socket) => {
   });
 });
 
-http.listen(4000, function () {
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 4000;
+}
+
+http.listen(port, function () {
   console.log("listening on *:4000");
 });
